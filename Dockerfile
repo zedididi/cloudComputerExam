@@ -15,7 +15,8 @@ RUN mkdir -p /home/webFile
 COPY mysql-cassandra-springboot-test-0.0.1-SNAPSHOT.jar /home/webFile
 
 WORKDIR /home/webFile
-EXPOSE 3306
-EXPOSE 80
 
-ENTRYPOINT [ "nohup", "java", "-jar","/home/webFile/mysql-cassandra-springboot-test-0.0.1-SNAPSHOT.jar",">","output.log","2>&1&"]
+EXPOSE 80
+EXPOSE 8080
+
+CMD [ "java", "-jar","/home/webFile/mysql-cassandra-springboot-test-0.0.1-SNAPSHOT.jar"]
